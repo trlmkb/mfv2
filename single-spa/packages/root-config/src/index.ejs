@@ -5,16 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Root Config</title>
+  <link rel="stylesheet" href="https://use.typekit.net/ujq7mra.css">
+  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
   <style>
-    /* Critical CSS */
-    html, body {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    *, *::before, *::after {
+      box-sizing: inherit;
     }
-    body {
+
+    html, body {
       margin: 0;
+      height: 100vh;
+      background-color: #111;
+    }
+
+    .main {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    html {
+      font-size: 62.5%;
+      box-sizing: border-box;
+    }
+
+    body {
+      font: 1.6rem/1.5 Proxima Nova, 'Lucida Grande', Tahoma, Verdana, sans-serif;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src <% if(isLocal) { %> 'unsafe-eval' <% } %> 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
   <meta name="importmap-type" content="systemjs-importmap" />
   <script type="systemjs-importmap">
@@ -34,7 +52,7 @@
     {
       "imports": {
         "@example/root-config": "http://localhost:9000/example-root-config.js",
-        "@example/navbar": "http://localhost:5000/example-navbar.js",
+        "@example/navbar": "http://localhost:50619/example-navbar.js",
         "@example/home": "http://localhost:5001/example-home.js",
         "@example/login": "http://localhost:5002/example-login.js",
         "@example/auth": "http://localhost:9001/example-auth.js"
@@ -67,10 +85,8 @@
 
   <template id="single-spa-layout">
     <single-spa-router>
-      <div>
-        <application name="@example/navbar"></application>
-      </div>
-      <main>
+      <application name="@example/navbar"></application>
+      <main class="main">
         <route path="home" >
           <application name="@example/home"></application>
         </route>

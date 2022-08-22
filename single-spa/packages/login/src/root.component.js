@@ -31,10 +31,15 @@ export default function Root(props) {
   return (
     <div>
       <form name="login" className="login-form" onSubmit={onSubmit}>
-        <label htmlFor="username">Username</label>
-        <input id="username" type="text" required />
-        <label htmlFor="password">Password</label>
-        <input id="password" type="password" required />
+        <h1>Login</h1>
+        <div className="input-wrap">
+          <label htmlFor="username">Username</label>
+          <input id="username" type="text" required />
+        </div>
+        <div className="input-wrap">
+          <label htmlFor="password">Password</label>
+          <input id="password" type="password" required />
+        </div>
         <div>
           <button type="submit" className="submit" disabled={pending}>
             {pending ? <Loader /> : "Submit"}

@@ -1,9 +1,10 @@
 import React from "react";
+import "./styles.css";
 
 export default function Root(props) {
   return (
-    <section style={{ textAlign: "center", padding: "1rem" }}>
-      {props.name} is mounted!
+    <section className="homepage">
+      I am <strong>[{props.name}]</strong> microfrontend
     </section>
   );
 }

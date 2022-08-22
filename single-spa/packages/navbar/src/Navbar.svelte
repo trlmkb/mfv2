@@ -24,36 +24,58 @@
   });
 </script>
 
-<nav>
-  <Router>
-    {#if $auth.sessionToken}
-      <span>Welcome!</span>
-      <button class="action" type="button" on:click|once={logout}>Logout</button
-      >
-    {:else}<span>Login</span>{/if}
-  </Router>
-</nav>
+<header class="header">
+  <nav>
+    <Router>
+      {#if $auth.sessionToken}
+        <span>Welcome!</span>
+        <button class="action" type="button" on:click|once={logout}>Logout</button
+        >
+      {:else}<span>You are not logged in.</span>{/if}
+    </Router>
+  </nav>
+</header>
 
 <style>
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem 8rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+  }
   nav {
-    background: crimson;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: right;
+    color: #999;
+    font: inherit;
+    font-weight: 700;
+    font-size: 1.6rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
   }
 
   nav .action {
-    background: transparent;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    color: white;
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+    background: none;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    color: #404cfa;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 700;
+    padding: .8rem 2rem;
+    height: 4.2rem;
     text-decoration: none;
+    transition: all .2s ease-in-out;
   }
 
   nav .action:hover,
   nav .action:focus {
-    background: rgba(0, 0, 0, 0.3);
+    background-color: #404cfa;
+    border-color: #404cfa;
+    color: #fff;
+    outline: 0;
   }
 </style>
