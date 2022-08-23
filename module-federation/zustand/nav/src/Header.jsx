@@ -5,18 +5,20 @@ import useStore from "host/store";
 export default () => {
   const { count, clear } = useStore();
   return (
-    <header className="bg-blue-700 text-white font-bold text-3xl p-5 flex">
-      <div class="flex-grow">Awesome Header</div>
-      <div>
+    <header className="header">
+    <div className="title"><span>le</span>Shop</div>
+    <div className="cart">
+      <div className="cart-count">
         {count}
-
-        <button
-          onClick={clear}
-          className="bg-indigo-800 text-white font-bold py-2 px-4 rounded"
-        >
-          Clear Cart
-        </button>
       </div>
-    </header>
+
+      <button
+        onClick={clear}
+        className="button"
+      >
+        Clear Cart
+      </button>
+    </div>
+  </header>
   );
 };

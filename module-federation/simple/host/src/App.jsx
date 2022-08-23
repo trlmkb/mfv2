@@ -8,18 +8,37 @@ import "./index.scss";
 const App = () => {
   const [count, setCount] = useState(0);
   return (
-    <div className="text-3xl mx-auto max-w-6xl">
+    <div className="page">
       <Header count={count} onClear={() => setCount(0)} />
-      <div>Name: host</div>
-      <div>Count: {count}</div>
-      <div>
-        <button
-          onClick={() => setCount(count + 1)}
-          className="bg-indigo-800 text-white font-bold py-2 px-4 rounded"
-        >
-          Add To Cart
-        </button>
-      </div>
+      
+      <fieldset className="mf-wrap">
+        <legend>
+          <span className="mf">I am <strong>Host</strong> microfrontend</span>
+        </legend>
+        
+        <div className="count-wrapper">
+          <div className="count">
+            <div className="count-text">
+              Items in cart
+            </div>
+            <div className="count-number">
+              {count}
+            </div>
+          </div>
+          <div className="count-actions-wrap">
+            <button
+              onClick={() => setCount(count + 1)}
+              className="button button--icon"
+            >
+              <svg className="plus" viewBox="0 0 32 32">
+                <path d="M28 14H18V4a2 2 0 0 0-4 0v10H4a2 2 0 0 0 0 4h10v10a2 2 0 0 0 4 0V18h10a2 2 0 0 0 0-4z"/>
+              </svg>
+            </button>
+            
+          </div>
+        </div>
+
+      </fieldset>
     </div>
   );
 };

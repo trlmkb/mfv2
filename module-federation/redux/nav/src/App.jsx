@@ -9,9 +9,17 @@ import "./index.scss";
 
 const App = () => (
   <StoreProvider>
-    <div className="mt-10 text-3xl mx-auto max-w-6xl">
+    <div className="container">
       <Header />
-      <div>Name: nav</div>
+      <fieldset className="mf-wrap">
+        <legend>
+          <span className="mf">I am <strong>Nav</strong></span>
+        </legend>
+
+        <div className="count-wrapper">
+          This isn't the microfrontend you're looking for.
+        </div>
+      </fieldset>
     </div>
   </StoreProvider>
 );

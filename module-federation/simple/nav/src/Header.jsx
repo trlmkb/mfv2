@@ -1,14 +1,17 @@
 import React from "react";
+import "./index.scss";
 
 export default ({ count, onClear }) => (
-  <header className="bg-blue-700 text-white font-bold text-3xl p-5 flex">
-    <div class="flex-grow">Awesome Header</div>
-    <div>
-      {count}
+  <header className="header">
+    <div className="title"><span>le</span>Shop</div>
+    <div className="cart">
+      <div className="cart-count">
+        {count}
+      </div>
 
       <button
         onClick={onClear}
-        className="bg-indigo-800 text-white font-bold py-2 px-4 rounded"
+        className="button"
       >
         Clear Cart
       </button>

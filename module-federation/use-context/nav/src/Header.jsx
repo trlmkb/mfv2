@@ -5,14 +5,16 @@ import { useCount } from "host/store";
 export default () => {
   const [count, setCount] = useCount();
   return (
-    <header className="bg-blue-700 text-white font-bold text-3xl p-5 flex">
-      <div class="flex-grow">Awesome Header</div>
-      <div>
-        {count}
+    <header className="header">
+      <div className="title"><span>le</span>Shop</div>
+      <div className="cart">
+        <div className="cart-count">
+          {count}
+        </div>
 
         <button
           onClick={() => setCount(0)}
-          className="bg-indigo-800 text-white font-bold py-2 px-4 rounded"
+          className="button"
         >
           Clear Cart
         </button>

@@ -41,16 +41,15 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 2rem 8rem;
+    padding: 8rem;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
   }
   nav {
-    color: #999;
+    color: #f8f8f8;
     font: inherit;
-    font-weight: 700;
     font-size: 1.6rem;
     display: flex;
     gap: 2rem;
